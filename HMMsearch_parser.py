@@ -48,6 +48,9 @@ for line in handlef:
         if '.p' in line:
             #print("end in index .p")
             end = line.index('.p')
+        if '_i' in line:
+            #print("end in index _i")
+            end = line.index('_i')
         #print("start value : " + str(start) + " end value :" + str(end))
         hit = line[(start+2):(end+4)]
         myhits.append(hit)
