@@ -1,0 +1,19 @@
+cp <..>Notos_unique.txt .
+module load mafft
+mafft --auto --inputorder --reorder --anysymbol Notos_unique.txt > TLR_out.fa
+module load hmmer
+hmmbuild TLR1.hmm TLR_out.fa
+ls
+ls -ltr
+history
+
+
+Repeat commands:
+
+hmmsearch NITR.hmm protein_GCF_902150065.1_small.fa > protein_GCF_902150065.1_small.hmmSearch.out
+module load anaconda3/
+python HMMsearch_parser.py protein_GCF_902150065.1_small.hmmSearch.out protein_GCF_902150065.1_small.fa
+python renameAndMerge.py protein_GCF_902150065.1_small.hmmSearch.out TLR_out.fa combined_TLR_Holocentridae_V1.fa 
+mafft --anysymbol combined_TLR_Holocentridae_V1.fa > combined_TLR_Holocentridae_V1_out.fa
+module load iqtree
+/apps/pkg/iqtree/2.1.2/bin/iqtree2 -s combined_TLR_Holocentridae_V1_out.fa -B 1000
