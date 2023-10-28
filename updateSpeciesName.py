@@ -30,7 +30,7 @@ copyfile(input_file, input_file + "_backup")
 
 seqStartChar = ">"
 ##Example speciesName with underscore Myripristis_murdjan
-speciesName = sys.argv[2]
+speciesName = speciesName = sys.argv[2]
 
 updatedSeq = seqStartChar + speciesName + "_"
 

@@ -1,6 +1,3 @@
-###Author: RajaSangeetha Vijayam
-###Date: 06/30/2022
-
 import os
 import sys
 from shutil import copyfile
